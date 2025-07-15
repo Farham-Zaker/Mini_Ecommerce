@@ -18,10 +18,9 @@
                 <h2>{{ $product["name"] }}</h2>
                 <p>{{ $product["description"] }}</p>
                 <div class="price">قیمت: {{ $product["price"] }}</div>
-                <form  method="POST">
-                    @csrf
-                    <button type="submit" class="btn">خرید</button>
-                </form>
+                <a href="{{ route("confirm",["id" => $product["id"]]) }}">
+                     <button type="submit" class="btn">خرید</button>
+                </a>
             </div>
         @endforeach
  
