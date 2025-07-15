@@ -5,4 +5,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix("products")->group(function () {
     Route::get("/", [ProductController::class, "index"])->name("product.index");
+    Route::get("/confirm")->name("confirm");
 });
