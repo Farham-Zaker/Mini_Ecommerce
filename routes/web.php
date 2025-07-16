@@ -9,5 +9,5 @@ Route::prefix("products")->group(function () {
     Route::get("/confirm", [ProductController::class, "confirm"])->name("confirm");
 });
 
-Route::get("/pay",[PaymentController::class,"pay"])->name("pay");
+Route::get("/pay")->name("pay");
 Route::get("/payment/confirm")->name("payment.confirm");
