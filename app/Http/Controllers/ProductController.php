@@ -13,12 +13,16 @@ class ProductController extends Controller
 
         return view("products", ["products" => $products]);
     }
-    public function confirm(Request $request){
+    public function confirm(Request $request)
+    {
         $product_id = $request->input('id');
-        
+
         $product = Product::find($product_id);
 
-        if(!$product) return view("404");
+        if (!$product) return view("error", [
+            "status_code" => 404,
+            "message" => "محصولی یافت نشد." 
+        ]);
 
         return view("confirm", ["product" => $product]);
     }
