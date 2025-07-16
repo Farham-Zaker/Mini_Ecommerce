@@ -16,11 +16,13 @@
 
         <p>قیمت: {{ $product->price }} تومان</p>
 
-        <form  method="POST">
-            @csrf
+        <a href="{{ route("pay",[
+            "amount" => $product["price"]
+            ,"product_id" => $product["id"]
+        ]) }}">
             <button type="submit" class="pay-btn">تأیید و پرداخت</button>
-            <a href="{{ route('product.index') }}"><button type="button" class="cancel-btn">بازگشت</button></a>
-        </form>
+        </a>
+        <a href="{{ route('product.index') }}"><button type="button" class="cancel-btn">بازگشت</button></a>
     </div>
 
 </body>
